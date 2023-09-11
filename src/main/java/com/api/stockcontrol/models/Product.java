@@ -3,6 +3,7 @@ package com.api.stockcontrol.models;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.hateoas.RepresentationModel;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
@@ -12,7 +13,7 @@ import java.util.UUID;
 @Getter
 @Setter
 @Table(name = "tb_products")
-public class Product  implements Serializable {
+public class Product extends RepresentationModel<Product> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -25,6 +26,4 @@ public class Product  implements Serializable {
 
     @Column
     private BigDecimal value;
-
-
 }
